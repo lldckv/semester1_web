@@ -7,6 +7,8 @@
   <h4>lldckv</h4>
   <script>
   function isPrime(num) {
+    if (num < 2) return false;
+    if (num === 2) return true;
     if (num % 2 === 0) return false;
     const maxCheck = Math.sqrt(num);
     for (let i = 3; i <= maxCheck; i += 2) {
