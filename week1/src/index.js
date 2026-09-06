@@ -1,4 +1,4 @@
-import htmlContent from 'week1.html';
+import htmlContent from './week1.html';
 
 export default {
   async fetch(request, env, ctx) {
