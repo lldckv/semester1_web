@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>lldckv</title><meta charset="utf-8">
+ </head>
+ <body>
+  <h4>lldckv</h4>
+  <script>
+  window.onload = function () {                             
+    const url = new URL(request.url);
+    const pathname = url.pathname;
+
+    const arrayMatch = pathname.match(/^\?\d+,\d+,\d+$/);
+    if (arrayMatch) {
+      const numbers = [parseInt(match[1], 10), parseInt(match[2], 10), parseInt(match[3], 10)];
+      const sorted = numbers.toSorted((a, b) => a - b);
+      document.title = sorted.join(','); 
+    }
+  }                                            
+  </script>
+ </body>
+</html>
