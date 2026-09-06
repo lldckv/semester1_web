@@ -7,7 +7,7 @@
   <h4>lldckv</h4>
   <script>
   window.onload = function () {                             
-    const pathname = window.location.search;
+    const pathname = decodeURIComponent(window.location.search);
     const arrayMatch = pathname.match(/^\?\[(\d+),(\d+),(\d+)\]$/);
     if (arrayMatch) {
       const numbers = [parseInt(arrayMatch[1], 10), parseInt(arrayMatch[2], 10), parseInt(arrayMatch[3], 10)];
