@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>lldckv</title><meta charset="utf-8">
+ </head>
+ <body>
+  <h4>lldckv</h4>
+  <script>
+  function isPrime(num) {
+    if (num % 2 === 0) return false;
+    const maxCheck = Math.sqrt(num);
+    for (let i = 3; i <= maxCheck; i += 2) {
+        if (num % i === 0) return false;
+    }
+    return true;
+  }
+  function countPrimes(n) {    
+    let count = 0;
+    for (let i = 2; i <= n; i++) {
+        if (isPrime(i)) {
+            count++;
+        }
+    }
+    return count;
+  } 
+  window.onload = function () {                             
+    const pathname = decodeURIComponent(window.location.search);
+    const numMatch = pathname.match(/^\?\d+$/);
+    if (numMatch) {
+      const num = parseInt(arrayMatch[1], 10);
+
+      const res = countPrimes(num);
+      document.title = res.toString();
+    }
+  }                                            
+  </script>
+ </body>
+</html>
