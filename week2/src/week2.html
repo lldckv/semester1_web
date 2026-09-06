@@ -8,9 +8,11 @@
   <script>
   window.onload = function () {                             
     const pathname = decodeURIComponent(window.location.search);
-    const arrayMatch = pathname.match(/^\?\[(-?\d+),(-?\d+),(-?\d+)\]$/);
+    const arrayMatch = pathname.match(/^\?\[(-?\d+(?:,-?\d+)*)\]$/);
     if (arrayMatch) {
-      const numbers = [parseInt(arrayMatch[1], 10), parseInt(arrayMatch[2], 10), parseInt(arrayMatch[3], 10)];
+      const numbers = arrayMatch[1]
+        .split(',')
+        .map(str => parseInt(str, 10));
       numbers.sort((a, b) => a - b);
       document.title = numbers.toString();
     }
