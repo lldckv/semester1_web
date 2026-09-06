@@ -10,7 +10,7 @@
     const pathname = window.location.search;
     const arrayMatch = pathname.match(/^\?\[\d+,\d+,\d+\]$/);
     if (arrayMatch) {
-      const numbers = [parseInt(match[1], 10), parseInt(match[2], 10), parseInt(match[3], 10)];
+      const numbers = [parseInt(arrayMatch[1], 10), parseInt(arrayMatch[2], 10), parseInt(arrayMatch[3], 10)];
       const sorted = numbers.toSorted((a, b) => a - b);
       document.title = sorted.join(','); 
     }
