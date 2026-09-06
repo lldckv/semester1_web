@@ -27,7 +27,7 @@
     const pathname = decodeURIComponent(window.location.search);
     const numMatch = pathname.match(/^\?\d+$/);
     if (numMatch) {
-      const num = parseInt(arrayMatch[1], 10);
+      const num = parseInt(numMatch[1], 10);
 
       const res = countPrimes(num);
       document.title = res.toString();
